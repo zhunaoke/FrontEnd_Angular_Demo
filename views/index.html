@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="indexApp">
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/bower_components/sweetalert/dist/sweetalert.css"/>
+    <link rel="stylesheet" href="/apps/dist/css/initialization.css"/>
+    <link rel="stylesheet" href="/apps/dist/css/header.css"/>
+
+  </head>
+  <body ng-controller="indexCtrl">
+    <div ng-include="'/apps/views/include/header.html'"></div>
+
+    <section ui-view=""></section>
+
+    <div ng-include="'/apps/views/include/footer.html'"></div>
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!--<script src="/bower_components/angular/angular.min.js"></script>-->
+    <!--<script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>-->
+    <!--<script src="/bower_components/angular-cookies/angular-cookies.min.js"></script>-->
+
+    <script src="/apps/libs/angular/angular.min.js"></script>
+    <script src="/apps/libs/angular/angular-ui-router.min.js"></script>
+    <script src="/apps/libs/angular/angular-cookies.min.js"></script>
+
+    <script src="/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+
+
+    <script src="/apps/angularRoute.js"></script>
+    <script src="/apps/src/controller/IndexController.js"></script>
+    <script src="/apps/src/controller/MobileController.js"></script>
+    <script src="/apps/src/controller/WebController.js"></script>
+    <script src="/apps/src/controller/UiController.js"></script>
+    <script src="/apps/src/controller/DocController.js"></script>
+    <script src="/apps/src/controller/LifeController.js"></script>
+    <script src="/apps/src/controller/AboutController.js"></script>
+    <script src="/apps/src/controller/MsgController.js"></script>
+
+    <script src="/apps/src/service/IndexService.js"></script>
+    <script src="/apps/src/service/MobileService.js"></script>
+    <script src="/apps/src/service/WebService.js"></script>
+    <script src="/apps/src/service/UiService.js"></script>
+    <script src="/apps/src/service/DocService.js"></script>
+    <script src="/apps/src/service/LifeService.js"></script>
+    <script src="/apps/src/service/AboutService.js"></script>
+    <script src="/apps/src/service/MsgService.js"></script>
+    <script src="/apps/dist/js/util.js"></script>
+
+  </body>
+</html>

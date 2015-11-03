@@ -1,0 +1,26 @@
+<table ng-if="productsList.length!=0"  class="table table-hover" style="border:1px solid #ccc;">
+    <thead>
+    <tr>
+        <th>编号</th>
+        <th>标题</th>
+        <th>价格</th>
+        <th>销量</th>
+        <th>商店名称</th>
+        <th>类型</th>
+        <th>评价数</th>
+        <th>地址</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="product in productsList">
+        <td ng-cloak>{{product.item_id}}</td>
+        <td ng-cloak>{{product.title}}</td>
+        <td ng-cloak>{{product.priceWithRate}}</td>
+        <td ng-cloak>{{product.sold}}</td>
+        <td ng-cloak>{{product.nick}}</td>
+        <td ng-cloak>{{product.zkType}}</td>
+        <td ng-cloak>{{product.commentCount}}</td>
+        <td ng-cloak>{{product.location}}</td>
+    </tr>
+    </tbody>
+</table>

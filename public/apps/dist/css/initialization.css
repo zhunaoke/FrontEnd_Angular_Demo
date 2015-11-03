@@ -1,0 +1,8 @@
+html,body,div,ul,li,dl,dt,dd,ol,a,p,em,i,img,span,h1,h2,h3,h4,h5,h6,section,header,footer{margin:0;padding: 0;text-align: left;}
+html{font-family:"microsoft yahei";font-size: 14px;color:#000;overflow-x: hidden;overflow-y: scroll;}
+a,a:hover,a:link,a:active{text-decoration: none;}
+h1,h2,h3,h4,h5,h6{font-weight: 400;}
+ul li,ol li,dl dt,dl dd{list-style: none;}
+body{background-color: #E8E8E8;overflow-x: hidden;}
+section{height:auto;min-height: 900px;}
+

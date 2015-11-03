@@ -1,0 +1,44 @@
+header{
+    height:72px;
+    background: white; /* 备用属性 */
+    background: -moz-linear-gradient(top, #fff, #fff 15%, #d4d7db 80%);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), color-stop(15%, #fff), color-stop(80%, #d4d7db));
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#d4d7db'); /* IE6,IE7 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#d4d7db')"; /* IE8 */
+    box-shadow: 0 2px 5px #AFAFAF;
+    position: relative;
+}
+
+.menu>ul{height:auto;overflow: hidden;margin:0;display: inline-block;}
+.menu>ul>li{float: left;}
+.menu>ul>li>a,.menu>ul>li>a:hover,.menu>ul>li>a:link,.menu>ul>li>a:active{color:#000;display:inline-block;
+width:90px;height:70px;line-height:70px;text-align:center;text-decoration: none;position: relative;z-index: 20;}
+
+ul.menus{position: absolute;left:20%;}
+ul.menus>li{position: relative;}
+ul.menus>li>div.top_hover{display:inline-block;height:70px;width:90px;position: absolute;top:65px;}
+ul.menus>li:nth-child(1) div.top_hover{background-color: #00B7FF;}
+ul.menus>li:nth-child(2) div.top_hover{background-color: #fab4cc;}
+ul.menus>li:nth-child(3) div.top_hover{background-color: #acd180;}
+ul.menus>li:nth-child(4) div.top_hover{background-color: #FFDE6F;}
+ul.menus>li:nth-child(5) div.top_hover{background-color: #ffae5b;}
+ul.menus>li:nth-child(6) div.top_hover{background-color: #A2BF6F;}
+ul.menus>li:nth-child(7) div.top_hover{background-color: #F58D76;}
+ul.menus>li:nth-child(8) div.top_hover{background-color: #A37F67;}
+
+header .process{width:100%;height:2px;background-color: #0099CC;animation: process 6s linear infinite alternate;}
+@keyframes process {
+    0%   {background-color:#CC6600; }
+    25%  {background-color:#009966; }
+    50%  {background-color:#CC0066; }
+    75%  {background-color:#009999; }
+    100% {background-color:#99CC00; }
+}
+
+footer{height:100px;background-color: #d2d2d2;}
+footer p{font-size: 12px;color:#333333;text-align: center;padding:40px 0;}
+
+.logo,.user{display: inline-block;position: absolute;}
+.logo{left:10%;top:10px;}
+.logo img{width:50px;height:50px;}
+.user{right:10%;top:25px;color:indianred;}

@@ -1,0 +1,58 @@
+{
+  "title": "接口地址配置文件",
+  "version": "1.0.0",
+  "engine": "mockjs",
+  "rulebase": "./interfaceRules/",
+  "status": "develop",
+  "interfaces": [
+    {
+      "name": "商品列表",
+      "id": "taobao.list",
+      "urls": {
+        "test": "http://api.s.m.taobao.com/search.json",
+        "develop": "http://api.s.m.taobao.com/search.json",
+        "product": "http://api.s.m.taobao.com/search.json"
+      },
+      "method": "get"
+    },
+    {
+      "name": "业务账号-搜素业务账号",
+      "id": "taobao.searchAccount",
+      "urls": {
+        "test": "http://localhost:8099/payplus/internal/v1/pay/business/account/search?page=:page&pageSize=:pageSize",
+        "develop": "http://localhost:8099/payplus/internal/v1/pay/business/account/search?page=:page&pageSize=:pageSize",
+        "product": "http://localhost:8099/payplus/internal/v1/pay/business/account/search?page=:page&pageSize=:pageSize"
+      },
+      "method": "post",
+      "contentType":"application/json"
+    },
+    {
+      "name": "业务账号-搜素业务账号",
+      "id": "taobao.searchAccount",
+      "urls": {
+        "test": "http://localhost:8099/payplus/internal/v1/pay/business/account/search?page=:page&pageSize=:pageSize",
+        "develop": "http://localhost:8099/payplus/internal/v1/pay/business/account/search?page=:page&pageSize=:pageSize",
+        "product": "http://localhost:8099/payplus/internal/v1/pay/business/account/search?page=:page&pageSize=:pageSize"
+      },
+      "method": "put",
+      "contentType":"application/json"
+    },
+    {
+      "name": "业务账号-搜素业务账号",
+      "id": "taobao.searchAccount",
+      "urls": {
+        "test": "http://localhost:8099/payplus/internal/v1/pay/business/account/search?page=:page&pageSize=:pageSize",
+        "develop": "http://localhost:8099/payplus/internal/v1/pay/business/account/search?page=:page&pageSize=:pageSize",
+        "product": "http://localhost:8099/payplus/internal/v1/pay/business/account/search?page=:page&pageSize=:pageSize"
+      },
+      "method": "delete",
+      "contentType":"application/json"
+    }
+  ],
+  "combo": {
+    "getMyData": [
+      "Cart.getCart",
+      "Search.suggest"
+    ]
+  }
+}

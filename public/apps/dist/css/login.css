@@ -1,0 +1,108 @@
+.container{
+    width:100%;
+    height:auto;
+    overflow:hidden;
+    background: url("../img/Background.jpg") no-repeat top center;
+    background-size:cover;
+}
+.mid{
+    width:1000px;
+    margin:0 auto;
+}
+.loginBox-before{
+    margin:0 auto;
+    background: url("../img/Rope-Lines1.png") no-repeat top center;
+    width:82px;
+    height: 100px;
+    position: relative;
+    z-index: 100;
+}
+.loginBox-before:after{
+    content: "";
+    width:128px;
+    height:12px;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    background-color: #000;
+    opacity: 0.1;
+    display: inline-block;
+    position: absolute;
+    bottom: -14px;
+    left: -25px;
+}
+.loginBox{
+    margin:0 auto 120px auto;
+    width:576px;
+    height: 420px;
+    border:1px solid #fff;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 2px 2px 12px #000;
+    position: relative;
+    z-index: 1;
+    top:-28px;
+}
+.login-tit{
+    color:#fff;
+    font-family: "Tahoma";
+    font-size: 21px;
+    margin-top: 70px;
+    text-align: center;
+}
+.login-con{
+    margin: 40px 65px 10px 65px;
+}
+.form-group{
+    margin:0 0 16px 0;
+    width: 444px;
+    height: 60px;
+    line-height: 60px;
+}
+.form-control{
+    border:1px solid #f2f2f2;
+    box-shadow: 1px 1px 5px #7C807A inset;
+    border-radius: 10px;
+}
+.form-control input,.form-control label{
+    display:block;
+    float: left;
+}
+.form-control input{
+    border:0;
+    background: transparent;
+    height:60px;
+    line-height: 60px;
+    outline: none;
+    width:370px;
+}
+label.icon-user,label.icon-lock{
+    width:33px;
+    height:36px;
+    margin:12px 10px;
+}
+label.icon-user{
+    background: url("../img/Person.png") no-repeat left;
+}
+label.icon-lock{
+    background: url("../img/Lock.png") no-repeat left;
+}
+.login-submit{
+    display: block;
+    background-color: #91c46c;
+    border-radius: 10px;
+    height:60px;
+    width: 444px;
+    border:1px solid #80af5c;
+    outline: none;
+    box-shadow: 0 1px 2px #fff inset;
+    color:#fff;
+    font-family: "Tahoma";
+    font-size: 21px;
+}
+
+
+
+
+
+
+

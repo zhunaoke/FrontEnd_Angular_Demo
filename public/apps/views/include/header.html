@@ -1,0 +1,56 @@
+<header class="menu">
+    <div class="process"></div>
+    <div class="logo"><img src="/apps/dist/img/LOGO.png"/></div>
+    <ul class="menus">
+        <li>
+            <a ui-sref="/">首页</a>
+            <div class="top_hover"></div>
+        </li>
+        <li>
+            <a ui-sref="mobile">移动前端</a>
+            <div class="top_hover"></div>
+        </li>
+        <li>
+            <a ui-sref="web">web前端</a>
+            <div class="top_hover"></div>
+        </li>
+        <li>
+            <a ui-sref="ui">UI设计</a>
+            <div class="top_hover"></div>
+        </li>
+        <li>
+            <a ui-sref="doc">文档</a>
+            <div class="top_hover"></div>
+        </li>
+        <li>
+            <a ui-sref="life">生活感言</a>
+            <div class="top_hover"></div>
+        </li>
+        <li>
+            <a ui-sref="about">关于</a>
+            <div class="top_hover"></div>
+        </li>
+        <li>
+            <a ui-sref="msg">留言</a>
+            <div class="top_hover"></div>
+        </li>
+    </ul>
+    <div class="user" ng-if="user!=null">
+        管理员：{{user.loginName}}
+        <a ui-sref="logout">退出</a>
+    </div>
+
+    
+</header>
+
+
+
+<script>
+//    $("[data-toggle='tooltip']").tooltip();
+    $("ul.menus").find("li").bind("mouseover",function(){
+        $(this).find("div.top_hover").animate({top:0},220);
+    });
+    $("ul.menus").find("li").bind("mouseout",function(){
+        $(this).find("div.top_hover").animate({top:"65px"},220);
+    });
+</script>
