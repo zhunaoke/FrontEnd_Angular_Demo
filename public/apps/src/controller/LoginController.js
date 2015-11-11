@@ -17,7 +17,8 @@ loginApp.controller("LoginController",function($scope,$location,$window,user,$co
             console.log("成功！");
             $window.location="/#/";
         },function(err){
-            alert(err.msg);
+            swal("error",err.msg);
+            //alert(err.msg);
             console.log("登陆失败!")
         })
     }

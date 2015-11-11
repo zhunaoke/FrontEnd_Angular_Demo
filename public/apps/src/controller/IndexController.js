@@ -6,6 +6,7 @@ var indexApp=angular.module("indexApp.index",[
     "indexApp.indexService"
 ]);
 indexApp.controller("indexCtrl",function($scope,$window,index,$cookies){
+
     console.log("获得的user:"+$cookies.user);
     $scope.user=JSON.parse(utf8to16(base64decode($cookies.user)));
     //$scope.productsList;//定义商品列表；
@@ -15,7 +16,7 @@ indexApp.controller("indexCtrl",function($scope,$window,index,$cookies){
         },function(err){
             console.log(err);
         });
-    }
+    };
     $scope.getAllProducts();
 });
 
@@ -25,5 +26,4 @@ indexApp.controller("logoutCtrl",function($scope,$window,$cookies){
     delete $cookies.user;
     clearCookie("userCookie");
     $window.location="/login";
-
 });

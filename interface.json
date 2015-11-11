@@ -27,8 +27,8 @@
       "contentType":"application/json"
     },
     {
-      "name": "业务账号-搜素业务账号",
-      "id": "taobao.searchAccount",
+      "name": "业务账号-更新业务账号",
+      "id": "taobao.updateAccount",
       "urls": {
         "test": "http://localhost:8099/payplus/internal/v1/pay/business/account/search?page=:page&pageSize=:pageSize",
         "develop": "http://localhost:8099/payplus/internal/v1/pay/business/account/search?page=:page&pageSize=:pageSize",
@@ -38,8 +38,8 @@
       "contentType":"application/json"
     },
     {
-      "name": "业务账号-搜素业务账号",
-      "id": "taobao.searchAccount",
+      "name": "业务账号-删除业务账号",
+      "id": "taobao.deleteAccount",
       "urls": {
         "test": "http://localhost:8099/payplus/internal/v1/pay/business/account/search?page=:page&pageSize=:pageSize",
         "develop": "http://localhost:8099/payplus/internal/v1/pay/business/account/search?page=:page&pageSize=:pageSize",

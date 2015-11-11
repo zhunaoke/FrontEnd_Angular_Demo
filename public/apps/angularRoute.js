@@ -92,4 +92,6 @@ indexApp.config(function ($stateProvider, $urlRouterProvider,$httpProvider) {
             templateUrl: '/apps/views/msg.html',
             controller: 'msgCtrl'
         })
+
 });
+
