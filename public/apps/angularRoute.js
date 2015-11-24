@@ -37,14 +37,20 @@ indexApp.run(function ($rootScope, $state, $stateParams) {
  * @param  {[type]} $urlRouterProvider
  * @return {[type]}
  */
-indexApp.config(function ($stateProvider, $urlRouterProvider,$httpProvider) {
+indexApp.config(function ($stateProvider, $urlRouterProvider,$httpProvider,$locationProvider) {
+    /**
+     * 清除angularjs在IE下的缓存；
+     */
     if (!$httpProvider.defaults.headers.get) {
         $httpProvider.defaults.headers.get = {};
     }
     $httpProvider.defaults.headers.get['If-Modified-Since'] = 'Mon, 26 Jul 1997 05:00:00 GMT';
     $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
     $httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
-
+    /**
+     * 设置html5历史记录功能,消除angularjs路由中的#号
+     */
+    $locationProvider.html5Mode(true);
 
     $urlRouterProvider.otherwise('/');
     $stateProvider

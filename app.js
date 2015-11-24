@@ -22,7 +22,7 @@ app.set('view engine', 'html');
 
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -34,8 +34,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function (req, res, next) {
   console.log("获取的cookie是： "+req.cookies.userCookie);
   var url = req.originalUrl;
+  console.log("origin-url:"+url);
   var userCookie=req.cookies.userCookie;
-  if(url=='/login'&&!(userCookie==undefined)){
+  if(url=='/api/login'&&!(userCookie==undefined)){
     return res.redirect('/');
   }
   next();
@@ -43,13 +44,22 @@ app.use(function (req, res, next) {
 
 
 
+
 /**
  * 配置nodejs端路由
  */
 app.use('/', routes);
-app.use('/login', users);
-app.use('/products', products);
-
+app.use('/api-login', users);
+app.use('/api-products', products);
+//控制将路由转向哪里
+app.use(function(req,res,next){
+  console.log("路径："+req.path);
+  if(req.path.indexOf('/api')>=0){//表示是nodejs中控制的路由
+    next();
+  }else{ //angularjs路由页面
+    res.render("index");
+  }
+});
 
 
 // catch 404 and forward to error handler

@@ -5,9 +5,10 @@ var indexApp=angular.module("indexApp.index",[
     "ngCookies",
     "indexApp.indexService"
 ]);
-indexApp.controller("indexCtrl",function($scope,$window,index,$cookies){
+indexApp.controller("indexCtrl",function($scope,$window,index,$cookies,$cookieStore){
 
     console.log("获得的user:"+$cookies.user);
+    console.log("获得的user:"+$cookieStore.get('user2323'));
     $scope.user=JSON.parse(utf8to16(base64decode($cookies.user)));
     //$scope.productsList;//定义商品列表；
     $scope.getAllProducts=function(){
@@ -21,9 +22,10 @@ indexApp.controller("indexCtrl",function($scope,$window,index,$cookies){
 });
 
 //退出
-indexApp.controller("logoutCtrl",function($scope,$window,$cookies){
+indexApp.controller("logoutCtrl",function($scope,$window,$cookies,$cookieStore){
     $scope.uer=null;
     delete $cookies.user;
+    $cookieStore.remove("user2323");
     clearCookie("userCookie");
-    $window.location="/login";
+    $window.location="/api/login";
 });

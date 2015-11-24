@@ -8,7 +8,7 @@ indexApp.factory("index",function($http,$q,$cookies){
     return {
         getAllProducts:function(){
             var deferred=$q.defer();
-            $http.get("/products").success(function(data){
+            $http.get("/api-products").success(function(data){
                 return deferred.resolve(data);
             }).error(function(err){
                return deferred.reject(err);
