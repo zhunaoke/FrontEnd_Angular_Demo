@@ -4,7 +4,20 @@
 var webApp=angular.module("indexApp.webService",[
     "ngCookies"
 ]);
-webApp.factory("web",function($http,$q,$cookies){
+//webApp.factory("web",function($http,$q,$cookies){
+//    return {
+//        getUser:function(){
+//            var deferred=$q.defer();
+//            if(2==1){
+//                return deferred.resolve("success");
+//            }else{
+//                return deferred.reject("error");
+//            }
+//            return deferred.promise;
+//        }
+//    }
+//});
+webApp.factory("web",["$http","$q","$cookies",function($http,$q,$cookies){
     return {
         getUser:function(){
             var deferred=$q.defer();
@@ -15,5 +28,5 @@ webApp.factory("web",function($http,$q,$cookies){
             }
             return deferred.promise;
         }
-    }
-});
+    };
+}]);

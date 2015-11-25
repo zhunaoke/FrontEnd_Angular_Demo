@@ -5,6 +5,9 @@ var docApp=angular.module("indexApp.doc",[
     "ngCookies",
     "indexApp.docService"
 ]);
-docApp.controller("docCtrl",function($scope,$window,index,doc){
+//docApp.controller("docCtrl",function($scope,$window,index,doc){
+//
+//});
+docApp.controller("docCtrl",["$scope","$window","index","doc",function($scope,$window,index,doc){
 
-});
+}]);

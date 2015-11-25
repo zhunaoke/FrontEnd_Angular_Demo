@@ -4,7 +4,20 @@
 var aboutApp=angular.module("indexApp.aboutService",[
     "ngCookies"
 ]);
-aboutApp.factory("about",function($http,$q,$cookies){
+//aboutApp.factory("about",function($http,$q,$cookies){
+//    return {
+//        getUser:function(){
+//            var deferred=$q.defer();
+//            if(2==1){
+//                return deferred.resolve("success");
+//            }else{
+//                return deferred.reject("error");
+//            }
+//            return deferred.promise;
+//        }
+//    }
+//});
+aboutApp.factory("about",["$http","$q","$cookies",function($http,$q,$cookies){
     return {
         getUser:function(){
             var deferred=$q.defer();
@@ -15,5 +28,5 @@ aboutApp.factory("about",function($http,$q,$cookies){
             }
             return deferred.promise;
         }
-    }
-});
+    };
+}]);

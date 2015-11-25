@@ -4,7 +4,20 @@
 var lifeApp=angular.module("indexApp.lifeService",[
     "ngCookies"
 ]);
-lifeApp.factory("life",function($http,$q,$cookies){
+//lifeApp.factory("life",function($http,$q,$cookies){
+//    return {
+//        getUser:function(){
+//            var deferred=$q.defer();
+//            if(2==1){
+//                return deferred.resolve("success");
+//            }else{
+//                return deferred.reject("error");
+//            }
+//            return deferred.promise;
+//        }
+//    }
+//});
+lifeApp.factory("life",["$http","$q","$cookies",function($http,$q,$cookies){
     return {
         getUser:function(){
             var deferred=$q.defer();
@@ -15,5 +28,5 @@ lifeApp.factory("life",function($http,$q,$cookies){
             }
             return deferred.promise;
         }
-    }
-});
+    };
+}]);

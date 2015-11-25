@@ -28,7 +28,7 @@ var plugins=require("gulp-load-plugins")({
 });
 //预设任务，默认执行的任务default;
 gulp.task("default",["clean"],function(){
-    gulp.start("styles","scripts","images","watch");
+    gulp.start("styles","scripts","images","angularjsRoute","controller","service","watch");
 });
 // 清除任务；
 gulp.task("clean",[],function(cb){//cb为一个回调函数，确保任务完成时跳出；
@@ -91,6 +91,39 @@ gulp.task("images",[],function(){
        .pipe(plugins.notify({meassage:"images minified finished!"}))
 
 });
+
+/**
+ * angularjs文件压缩
+ */
+gulp.task("angularjsRoute",[],function(){
+    return gulp.src("./public/apps/angularRoute.js")
+        .pipe(plugins.rename({suffix:'.min'}))
+        .pipe(plugins.uglify())
+        .pipe(gulp.dest("./public/apps"))
+        .pipe(plugins.livereload())
+        .pipe(plugins.notify({message:'angularjs 路由压缩完成!'}))
+});
+gulp.task("controller",[],function(){
+    return gulp.src("./public/apps/src/controller/*.js")
+        .pipe(plugins.jshint())//检测js语法是否正确；
+        .pipe(plugins.jshint.reporter())//输出检查结果
+        .pipe(plugins.rename({suffix:'.min'}))
+        .pipe(plugins.uglify())
+        .pipe(gulp.dest("./public/apps/src/controllerMin"))
+        .pipe(plugins.livereload())
+        .pipe(plugins.notify({message:'angularjs controller js文件压缩完成!'}))
+});
+gulp.task("service",[],function(){
+    return gulp.src("./public/apps/src/service/*.js")
+        .pipe(plugins.jshint())//检测js语法是否正确；
+        .pipe(plugins.jshint.reporter())//输出检查结果
+        .pipe(plugins.rename({suffix:'.min'}))
+        .pipe(plugins.uglify())
+        .pipe(gulp.dest("./public/apps/src/serviceMin"))
+        .pipe(plugins.livereload())
+        .pipe(plugins.notify({message:'angularjs service js文件压缩完成!'}))
+});
+
 
 gulp.task("watch",[],function(){
     plugins.livereload.listen();

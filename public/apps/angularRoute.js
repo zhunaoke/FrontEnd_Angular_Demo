@@ -25,10 +25,14 @@ var indexApp=angular.module("indexApp",[
  * @param  {[type]} $stateParams
  * @return {[type]}
  */
-indexApp.run(function ($rootScope, $state, $stateParams) {
+//indexApp.run(function ($rootScope, $state, $stateParams) {
+//    $rootScope.$state = $state;
+//    $rootScope.$stateParams = $stateParams;
+//});
+indexApp.run(["$rootScope", "$state", "$stateParams",function ($rootScope, $state, $stateParams) {
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
-});
+}]);
 /**
  * 配置路由。
  * 注意这里采用的是ui-router这个路由，而不是ng原生的路由。
@@ -37,67 +41,136 @@ indexApp.run(function ($rootScope, $state, $stateParams) {
  * @param  {[type]} $urlRouterProvider
  * @return {[type]}
  */
-indexApp.config(function ($stateProvider, $urlRouterProvider,$httpProvider,$locationProvider) {
-    /**
-     * 清除angularjs在IE下的缓存；
-     */
-    if (!$httpProvider.defaults.headers.get) {
-        $httpProvider.defaults.headers.get = {};
-    }
-    $httpProvider.defaults.headers.get['If-Modified-Since'] = 'Mon, 26 Jul 1997 05:00:00 GMT';
-    $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
-    $httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
-    /**
-     * 设置html5历史记录功能,消除angularjs路由中的#号
-     */
-    $locationProvider.html5Mode(true);
+//indexApp.config(function ($stateProvider, $urlRouterProvider,$httpProvider,$locationProvider) {
+//    /**
+//     * 清除angularjs在IE下的缓存；
+//     */
+//    if (!$httpProvider.defaults.headers.get) {
+//        $httpProvider.defaults.headers.get = {};
+//    }
+//    $httpProvider.defaults.headers.get['If-Modified-Since'] = 'Mon, 26 Jul 1997 05:00:00 GMT';
+//    $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
+//    $httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
+//    /**
+//     * 设置html5历史记录功能,消除angularjs路由中的#号
+//     */
+//    $locationProvider.html5Mode(true);
+//
+//    $urlRouterProvider.otherwise('/');
+//    $stateProvider
+//        .state('/', {
+//            url: '/',
+//            templateUrl: '/apps/views/index.html',
+//            controller: 'indexCtrl'
+//        })
+//        .state('logout',{
+//            url:'/logout',
+//            controller:"logoutCtrl"
+//        })
+//        .state('mobile', {
+//            url: '/mobile',
+//            templateUrl: '/apps/views/mobile.html',
+//            controller: 'mobileCtrl'
+//        })
+//        .state('web', {
+//            url: '/web',
+//            templateUrl: '/apps/views/web.html',
+//            controller: 'webCtrl'
+//        })
+//        .state('ui', {
+//            url: '/ui',
+//            templateUrl: '/apps/views/ui.html',
+//            controller: 'uiCtrl'
+//        })
+//        .state('doc', {
+//            url: '/doc',
+//            templateUrl: '/apps/views/doc.html',
+//            controller: 'docCtrl'
+//        })
+//        .state('life', {
+//            url: '/life',
+//            templateUrl: '/apps/views/life.html',
+//            controller: 'lifeCtrl'
+//        })
+//        .state('about', {
+//            url: '/about',
+//            templateUrl: '/apps/views/about.html',
+//            controller: 'aboutCtrl'
+//        })
+//        .state('msg', {
+//            url: '/msg',
+//            templateUrl: '/apps/views/msg.html',
+//            controller: 'msgCtrl'
+//        })
+//
+//});
 
-    $urlRouterProvider.otherwise('/');
-    $stateProvider
-        .state('/', {
-            url: '/',
-            templateUrl: '/apps/views/index.html',
-            controller: 'indexCtrl'
-        })
-        .state('logout',{
-            url:'/logout',
-            controller:"logoutCtrl"
-        })
-        .state('mobile', {
-            url: '/mobile',
-            templateUrl: '/apps/views/mobile.html',
-            controller: 'mobileCtrl'
-        })
-        .state('web', {
-            url: '/web',
-            templateUrl: '/apps/views/web.html',
-            controller: 'webCtrl'
-        })
-        .state('ui', {
-            url: '/ui',
-            templateUrl: '/apps/views/ui.html',
-            controller: 'uiCtrl'
-        })
-        .state('doc', {
-            url: '/doc',
-            templateUrl: '/apps/views/doc.html',
-            controller: 'docCtrl'
-        })
-        .state('life', {
-            url: '/life',
-            templateUrl: '/apps/views/life.html',
-            controller: 'lifeCtrl'
-        })
-        .state('about', {
-            url: '/about',
-            templateUrl: '/apps/views/about.html',
-            controller: 'aboutCtrl'
-        })
-        .state('msg', {
-            url: '/msg',
-            templateUrl: '/apps/views/msg.html',
-            controller: 'msgCtrl'
-        })
+/**
+ * 需要压缩的模式
+ */
+indexApp.config(["$stateProvider","$urlRouterProvider","$httpProvider","$locationProvider",
+    function($stateProvider, $urlRouterProvider,$httpProvider,$locationProvider){
+        /**
+         * 清除angularjs在IE下的缓存；
+         */
+        if (!$httpProvider.defaults.headers.get) {
+            $httpProvider.defaults.headers.get = {};
+        }
+        $httpProvider.defaults.headers.get['If-Modified-Since'] = 'Mon, 26 Jul 1997 05:00:00 GMT';
+        $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
+        $httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
+        /**
+         * 设置html5历史记录功能,消除angularjs路由中的#号
+         */
+        $locationProvider.html5Mode(true);
 
-});
+        $urlRouterProvider.otherwise('/');
+        $stateProvider
+            .state('/', {
+                url: '/',
+                templateUrl: '/apps/views/index.html',
+                controller: 'indexCtrl'
+            })
+            .state('logout',{
+                url:'/logout',
+                controller:"logoutCtrl"
+            })
+            .state('mobile', {
+                url: '/mobile',
+                templateUrl: '/apps/views/mobile.html',
+                controller: 'mobileCtrl'
+            })
+            .state('web', {
+                url: '/web',
+                templateUrl: '/apps/views/web.html',
+                controller: 'webCtrl'
+            })
+            .state('ui', {
+                url: '/ui',
+                templateUrl: '/apps/views/ui.html',
+                controller: 'uiCtrl'
+            })
+            .state('doc', {
+                url: '/doc',
+                templateUrl: '/apps/views/doc.html',
+                controller: 'docCtrl'
+            })
+            .state('life', {
+                url: '/life',
+                templateUrl: '/apps/views/life.html',
+                controller: 'lifeCtrl'
+            })
+            .state('about', {
+                url: '/about',
+                templateUrl: '/apps/views/about.html',
+                controller: 'aboutCtrl'
+            })
+            .state('msg', {
+                url: '/msg',
+                templateUrl: '/apps/views/msg.html',
+                controller: 'msgCtrl'
+            })
+    }]);
+
+
 

@@ -2,5 +2,9 @@
 .idea
 /public/bower_components
 /public/apps/dist-gulp
+/public/apps/src/controllerMin
+/public/apps/src/serviceMin
+/public/apps/angularRoute.min.js
+
 
 
