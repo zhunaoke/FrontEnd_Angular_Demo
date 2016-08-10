@@ -50,7 +50,7 @@ gulp.task("styles",[],function(){
         .pipe(plugins.rename({suffix:'.min'}))
         .pipe(plugins.minifycss())
         .pipe(gulp.dest("./public/apps/dist-gulp"))
-        .pipe(plugins.notify({message:'css minified finished!'}))
+        //.pipe(plugins.notify({message:'css minified finished!'}))
 });
 //js文件压缩；
 gulp.task("scripts", [],function () {
@@ -62,7 +62,7 @@ gulp.task("scripts", [],function () {
         .pipe(plugins.uglify())//对重命名后的文件进行压缩;
         .pipe(gulp.dest("./public/apps/dist-gulp"))
         .pipe(plugins.livereload())//当代码变化时，它可以帮我们自动刷新页面;
-        .pipe(plugins.notify({message:'scripts minified finished!'}))
+        //.pipe(plugins.notify({message:'scripts minified finished!'}))
 });
 //图片压缩
 gulp.task("images",[],function(){
@@ -88,7 +88,7 @@ gulp.task("images",[],function(){
        */
        .pipe(gulp.dest('./public/apps/dist-gulp/img'))
        .pipe(plugins.livereload())//当代码变化时，它可以帮我们自动刷新页面;
-       .pipe(plugins.notify({meassage:"images minified finished!"}))
+       //.pipe(plugins.notify({meassage:"images minified finished!"}))
 
 });
 
@@ -101,7 +101,7 @@ gulp.task("angularjsRoute",[],function(){
         .pipe(plugins.uglify())
         .pipe(gulp.dest("./public/apps"))
         .pipe(plugins.livereload())
-        .pipe(plugins.notify({message:'angularjs 路由压缩完成!'}))
+        //.pipe(plugins.notify({message:'angularjs 路由压缩完成!'}))
 });
 gulp.task("controller",[],function(){
     return gulp.src("./public/apps/src/controller/*.js")
@@ -111,7 +111,7 @@ gulp.task("controller",[],function(){
         .pipe(plugins.uglify())
         .pipe(gulp.dest("./public/apps/src/controllerMin"))
         .pipe(plugins.livereload())
-        .pipe(plugins.notify({message:'angularjs controller js文件压缩完成!'}))
+        //.pipe(plugins.notify({message:'angularjs controller js文件压缩完成!'}))
 });
 gulp.task("service",[],function(){
     return gulp.src("./public/apps/src/service/*.js")
@@ -121,7 +121,7 @@ gulp.task("service",[],function(){
         .pipe(plugins.uglify())
         .pipe(gulp.dest("./public/apps/src/serviceMin"))
         .pipe(plugins.livereload())
-        .pipe(plugins.notify({message:'angularjs service js文件压缩完成!'}))
+        //.pipe(plugins.notify({message:'angularjs service js文件压缩完成!'}))
 });
 
 

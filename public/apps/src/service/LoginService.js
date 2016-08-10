@@ -32,7 +32,14 @@ loginApp.factory("user",["$http","$q","$cookies",function($http,$q,$cookies){
         login:function(user){
             var deferred=$q.defer();
             console.log(JSON.stringify(user));
-            $http.post("/api-login",{user:user}).success(function(data){
+            var loginUser={
+                name:'',
+                pwd:''
+            }
+             loginUser.name=CryptoJS.AES.encrypt(user.loginName,"123").toString(),
+             loginUser.pwd=CryptoJS.AES.encrypt(user.passWord,"123").toString();
+            console.log(JSON.stringify(loginUser));
+            $http.post("/api-login",{user:loginUser}).success(function(data){
                 console.log(data);
                 if(data.status=="200"){
                     $cookies.user=base64encode(JSON.stringify(user));

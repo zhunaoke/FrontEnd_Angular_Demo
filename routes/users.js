@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var crypto=require('crypto');
+var CryptoJS = require("crypto-js");
 var secret='pass';
 //加密
 function encrypt(str) {
@@ -41,12 +42,17 @@ router.get('/', function(req, res, next) {
 //处理登陆；
 router.post("/",function(req,res,next){
   var user=req.body.user;
+  console.log(user.name+"////"+user.pwd);
+  var name=CryptoJS.AES.decrypt(user.name,"123").toString(CryptoJS.enc.Utf8);
+  var pwd=CryptoJS.AES.decrypt(user.pwd,"123").toString(CryptoJS.enc.Utf8);
+  console.log("解密后："+name+"---"+pwd);
   var msg={
     "status":"",
     "msg":""
   }
-  console.log(JSON.stringify(user));
-  if(user.loginName=="admin"&&user.passWord=="admin"){
+
+
+  if(name=="admin"&&pwd=="admin"){
     msg={
       "status":"200",
       "msg":"登陆成功！"

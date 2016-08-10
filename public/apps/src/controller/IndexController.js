@@ -30,9 +30,10 @@ var indexApp=angular.module("indexApp.index",[
 //});
 
 indexApp.controller("indexCtrl",["$scope","$window","index","$cookies",function($scope,$window,index,$cookies){
+    $scope.footerHtml='/apps/views/include/footer.html';
     console.log("获得的user:"+$cookies.user);
     $scope.user=JSON.parse(utf8to16(base64decode($cookies.user)));
-    $scope.productsList;//定义商品列表；
+    $scope.productsList=[];//定义商品列表；
     $scope.getAllProducts=function(){
         index.getAllProducts().then(function(data){
             $scope.productsList=data.itemsArray;

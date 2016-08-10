@@ -1,31 +1,44 @@
 /**
  * Created by Administrator on 2015/11/2.
  */
-var msgApp=angular.module("indexApp.msgService",[
-    "ngCookies"
+var msgApp=angular.module('indexApp.msgService',[
+    'ngCookies'
 ]);
-//msgApp.factory("msg",function($http,$q,$cookies){
-//    return {
-//        getUser:function(){
-//            var deferred=$q.defer();
-//            if(2==1){
-//                return deferred.resolve("success");
-//            }else{
-//                return deferred.reject("error");
-//            }
-//            return deferred.promise;
-//        }
-//    }
-//});
-msgApp.factory("msg",["$http","$q","$cookies",function($http,$q,$cookies){
+msgApp.factory('msg',['$http','$q','$cookies',function($http,$q,$cookies){
     return {
-        getUser:function(){
+        getCommentList:function(page,pageSize){
             var deferred=$q.defer();
-            if(2==1){
-                return deferred.resolve("success");
-            }else{
-                return deferred.reject("error");
-            }
+            $http.get('/api-products/comments',{params:{page:page,pageSize:pageSize}}).success(function(data){
+                return deferred.resolve(data);
+            }).error(function(err){
+                return deferred.reject(err);
+            });
+            return deferred.promise;
+        },
+        //获取应用详情；
+        getSignalAppInfo:function(uuid,appId){
+            console.log(uuid+'---'+appId);
+            var deferred= $q.defer();
+            $http.get('/api-products/appInfo',{params:{uuid:uuid,appId:appId}}).success(function(data){
+                if(data.id!=''){
+//               console.log("返回的应用详情:"+JSON.stringify(data));
+                    return deferred.resolve(data);
+                }else{
+                    return deferred.reject(data);
+                }
+            }).error(function(error){
+                return deferred.reject(error);
+            });
+            return deferred.promise;
+        },
+        //重置应用的secretKey值；
+        resetSecretKey:function(uuid,appId){
+            var deferred= $q.defer();
+            $http.put("/api-products/resetSecretKey",{uuid:uuid,appId:appId}).success(function(data){
+                return deferred.resolve(data);
+            }).error(function(err){
+                return deferred.reject(err);
+            });
             return deferred.promise;
         }
     };

@@ -18,7 +18,7 @@
 
     <section ui-view=""></section>
 
-    <div ng-include="'/apps/views/include/footer.html'"></div>
+    <div ng-include="footerHtml"></div>
 
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -30,52 +30,52 @@
     <script src="/apps/libs/angular/angular.min.js"></script>
     <script src="/apps/libs/angular/angular-ui-router.min.js"></script>
     <script src="/apps/libs/angular/angular-cookies.min.js"></script>
-
+    <script src="/apps/libs/angular/ui-bootstrap.min.js"></script>
+    <script src="/apps/libs/angular/ui-bootstrap-tpls.js"></script>
     <script src="/bower_components/sweetalert/dist/sweetalert.min.js"></script>
 
 
-    <!--<script src="/apps/angularRoute.js"></script>-->
-    <!--<script src="/apps/src/controller/IndexController.js"></script>-->
-    <!--<script src="/apps/src/controller/MobileController.js"></script>-->
-    <!--<script src="/apps/src/controller/WebController.js"></script>-->
-    <!--<script src="/apps/src/controller/UiController.js"></script>-->
-    <!--<script src="/apps/src/controller/DocController.js"></script>-->
-    <!--<script src="/apps/src/controller/LifeController.js"></script>-->
-    <!--<script src="/apps/src/controller/AboutController.js"></script>-->
-    <!--<script src="/apps/src/controller/MsgController.js"></script>-->
+    <script src="/apps/angularRoute.js"></script>
+    <script src="/apps/src/controller/IndexController.js"></script>
+    <script src="/apps/src/controller/MobileController.js"></script>
+    <script src="/apps/src/controller/WebController.js"></script>
+    <script src="/apps/src/controller/UiController.js"></script>
+    <script src="/apps/src/controller/DocController.js"></script>
+    <script src="/apps/src/controller/LifeController.js"></script>
+    <script src="/apps/src/controller/AboutController.js"></script>
+    <script src="/apps/src/controller/MsgController.js"></script>
 
-    <!--<script src="/apps/src/service/IndexService.js"></script>-->
-    <!--<script src="/apps/src/service/MobileService.js"></script>-->
-    <!--<script src="/apps/src/service/WebService.js"></script>-->
-    <!--<script src="/apps/src/service/UiService.js"></script>-->
-    <!--<script src="/apps/src/service/DocService.js"></script>-->
-    <!--<script src="/apps/src/service/LifeService.js"></script>-->
-    <!--<script src="/apps/src/service/AboutService.js"></script>-->
-    <!--<script src="/apps/src/service/MsgService.js"></script>-->
+    <script src="/apps/src/service/IndexService.js"></script>
+    <script src="/apps/src/service/MobileService.js"></script>
+    <script src="/apps/src/service/WebService.js"></script>
+    <script src="/apps/src/service/UiService.js"></script>
+    <script src="/apps/src/service/DocService.js"></script>
+    <script src="/apps/src/service/LifeService.js"></script>
+    <script src="/apps/src/service/AboutService.js"></script>
+    <script src="/apps/src/service/MsgService.js"></script>
+    <script src="/apps/dist/js/util.js"></script>
 
     <!--使用压缩后的文件-->
-    <script src="/apps/angularRoute.min.js"></script>
-    <script src="/apps/src/controllerMin/IndexController.min.js"></script>
-    <script src="/apps/src/controllerMin/MobileController.min.js"></script>
-    <script src="/apps/src/controllerMin/WebController.min.js"></script>
-    <script src="/apps/src/controllerMin/UiController.min.js"></script>
-    <script src="/apps/src/controllerMin/DocController.min.js"></script>
-    <script src="/apps/src/controllerMin/LifeController.min.js"></script>
-    <script src="/apps/src/controllerMin/AboutController.min.js"></script>
-    <script src="/apps/src/controllerMin/MsgController.min.js"></script>
+    <!--<script src="/apps/angularRoute.min.js"></script>-->
+    <!--<script src="/apps/src/controllerMin/IndexController.min.js"></script>-->
+    <!--<script src="/apps/src/controllerMin/MobileController.min.js"></script>-->
+    <!--<script src="/apps/src/controllerMin/WebController.min.js"></script>-->
+    <!--<script src="/apps/src/controllerMin/UiController.min.js"></script>-->
+    <!--<script src="/apps/src/controllerMin/DocController.min.js"></script>-->
+    <!--<script src="/apps/src/controllerMin/LifeController.min.js"></script>-->
+    <!--<script src="/apps/src/controllerMin/AboutController.min.js"></script>-->
+    <!--<script src="/apps/src/controllerMin/MsgController.min.js"></script>-->
 
-    <script src="/apps/src/serviceMin/IndexService.min.js"></script>
-    <script src="/apps/src/serviceMin/MobileService.min.js"></script>
-    <script src="/apps/src/serviceMin/WebService.min.js"></script>
-    <script src="/apps/src/serviceMin/UiService.min.js"></script>
-    <script src="/apps/src/serviceMin/DocService.min.js"></script>
-    <script src="/apps/src/serviceMin/LifeService.min.js"></script>
-    <script src="/apps/src/serviceMin/AboutService.min.js"></script>
-    <script src="/apps/src/serviceMin/MsgService.min.js"></script>
-
-    <!--<script src="/apps/dist/js/util.js"></script>-->
+    <!--<script src="/apps/src/serviceMin/IndexService.min.js"></script>-->
+    <!--<script src="/apps/src/serviceMin/MobileService.min.js"></script>-->
+    <!--<script src="/apps/src/serviceMin/WebService.min.js"></script>-->
+    <!--<script src="/apps/src/serviceMin/UiService.min.js"></script>-->
+    <!--<script src="/apps/src/serviceMin/DocService.min.js"></script>-->
+    <!--<script src="/apps/src/serviceMin/LifeService.min.js"></script>-->
+    <!--<script src="/apps/src/serviceMin/AboutService.min.js"></script>-->
+    <!--<script src="/apps/src/serviceMin/MsgService.min.js"></script>-->
     <!--使用压缩后的js文件-->
-    <script src="/apps/dist-gulp/js/util.min.js"></script>
+    <!--<script src="/apps/dist-gulp/js/util.min.js"></script>-->
 
 
   </body>

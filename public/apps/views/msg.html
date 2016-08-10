@@ -1,1 +1,35 @@
-留言
+<div ng-show="commentList.length!=0">
+<table   class="table table-hover" style="border:1px solid #ccc;">
+    <thead>
+    <tr>
+        <th width="20%">编号</th>
+        <th width="20%">标题</th>
+        <th width="40%">内容</th>
+        <th width="20%">时间</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="comment in commentList">
+        <td width="20%" ng-cloak>{{comment.openid}}</td>
+        <td width="20%" ng-cloak>{{comment.nickname}}</td>
+        <td width="40%" ng-cloak>{{comment.content}}</td>
+        <td width="20%" ng-cloak>{{comment.time}}</td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="page">
+    <div>
+        <pagination boundary-links="true" total-items="totalItems"  ng-model="currentPage" class="pagination-md"
+                ng-change="pageChanged()" max-size="maxSize" rotate="false" totalPages="pages" items-per-page="5"
+                previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页">
+        </pagination>
+        <span class="totalPage" ng-cloak class="ng-cloak">共&nbsp;&nbsp;{{pages}}&nbsp;&nbsp;页，&nbsp;&nbsp;{{allItems}}&nbsp;&nbsp;条</span>
+    </div>
+</div>
+</div>
+<a ng-href="{{iosUrl}}">iosUrl</a>
+<br>
+<a ng-href="{{httpsUrl}}">httpsUrl</a>
+
+秘钥：{{signalApp.secretKey}}<button ng-click="resetAppSecretKey();">重置</button>
