@@ -60,6 +60,40 @@ msgApp.controller("msgCtrl",["$scope","$window","msg",function($scope,$window,ms
         },function(err){
             console.log(err);
         });
-    }
+    };
+
+    //获取医生状态
+    var token='eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ0c2IiLCJqdGkiOiJmY2JhNjFmYzVhZjk5YzBiOWU5MmJlYzIzOWI1Y2UyNCIsImlhdCI6MTQ3MTQ5NTMyNiwiZXhwIjoxNDg3MDQ3MzI2fQ.dXSXiTkiRV6edZMUMr6KXP9aX2PZPYYVADErkOnKBK0';
+    var doctor_id='57ad35aa9b0ab375bc3d5b1e';
+    var is_available=true;
+    $scope.doctorState=is_available;
+    
+    $scope.getDoctorState=function(){
+        msg.getDoctorState(token).then(function(data){
+            console.log(data);
+            $scope.doctorState=data.data.is_available;
+            //if(data!=='error'){
+            //    $scope.doctorState=data;//单个应用的基本信息；
+            //}
+        },function(err){
+            console.log(err);
+        });
+    };
+    $scope.getDoctorState();
+    //修改医生状态
+    $scope.modAvailableState=function(){
+        var data={"doctor_ids":["57ad35aa9b0ab375bc3d5b1e"]};
+        msg.modAvailableState(token,data,!$scope.doctorState).then(function(data){
+            console.log(data);
+            if(data.result=='TRUE'){
+                $scope.getDoctorState();
+            }else{
+                swal("","失败","error");
+            }
+        },function(err){
+            console.log(err);
+        });
+    };
+
 
 }]);

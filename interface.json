@@ -78,6 +78,27 @@
       },
       "method": "put",
       "contentType":"application/json"
+    },
+    {
+      "name": "咨询--修改医生的咨询状态",
+      "id": "taobao.modAvailableState",
+      "urls": {
+        "test": "http://119.29.113.67:8036/psy/modAvailableState",
+        "develop": "http://119.29.113.67:8036/psy/modAvailableState",
+        "product": "http://119.29.113.67:8036/psy/modAvailableState"
+      },
+      "method": "post",
+      "contentType":"application/json"
+    },
+    {
+      "name": "咨询--获取医生咨询状态",
+      "id": "taobao.getMyAvailableState",
+      "urls": {
+        "test": "http://119.29.113.67:8036/psy/getMyAvailableState",
+        "develop": "http://119.29.113.67:8036/psy/getMyAvailableState",
+        "product": "http://119.29.113.67:8036/psy/getMyAvailableState"
+      },
+      "method": "get"
     }
   ],
   "combo": {

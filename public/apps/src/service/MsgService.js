@@ -40,6 +40,26 @@ msgApp.factory('msg',['$http','$q','$cookies',function($http,$q,$cookies){
                 return deferred.reject(err);
             });
             return deferred.promise;
+        },
+        //获取医生咨询详情
+        getDoctorState:function(token){
+            var deferred= $q.defer();
+            $http.get("/api-products/modAvailableState",{params:{token:token}}).success(function(data){
+                return deferred.resolve(data);
+            }).error(function(err){
+                return deferred.reject(err);
+            });
+            return deferred.promise;
+        },
+        //修改医生咨询状态
+        modAvailableState:function(token,data,is_available){
+            var deferred= $q.defer();
+            $http.post("/api-products/modAvailableState",{token:token,data:data,is_available:is_available}).success(function(data){
+                return deferred.resolve(data);
+            }).error(function(err){
+                return deferred.reject(err);
+            });
+            return deferred.promise;
         }
     };
 }]);
