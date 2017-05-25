@@ -1,26 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        .cred {
-            color: red;
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0,maximum-scale =1.0" name="viewport">
+    <meta name="MobileOptimized" content="240"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>demo</title>
+    <style type="text/css" media="screen">
+        *{
+            box-sizing: border-box;
+        }
+        .bd{
+            margin:20px;
+            width:50%;
+            height:30px;
+            line-height: 30px;
+            text-align: center;
+            position: relative;
+        }
+        .option1{
+            border:1px solid red;
+        }
+        .option2{
+            border:0.5px solid red;
+        }
+        .option3:before{
+            content: '';
+            position: absolute;
+            top:0;
+            left:0;
+            width: 200%;
+            height: 200%;
+            border: 1px solid red;
+            -webkit-transform-origin: 0 0;
+            -moz-transform-origin: 0 0;
+            -ms-transform-origin: 0 0;
+            -o-transform-origin: 0 0;
+            transform-origin: 0 0;
+            -webkit-transform: scale(0.5, 0.5);
+            -ms-transform: scale(0.5, 0.5);
+            -o-transform: scale(0.5, 0.5);
+            transform: scale(0.5, 0.5);
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
         }
     </style>
 </head>
 <body>
-<p class="cred">
-    hello
-<div>world</div>
-</p>
-
-<p class="cred">hello</p>
-<div>world</div>
-<p></p>
-
-
-
-
+<div class="bd option1">1px的边框</div>
+<div class="bd option2">0.5像素的边框</div>
+<div class="bd option3">伪类设置的边框</div>
 </body>
 </html>
