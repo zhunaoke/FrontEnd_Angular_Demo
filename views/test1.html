@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0,maximum-scale =1.0" name="viewport">
+    <meta name="MobileOptimized" content="240"/>
+    <meta name="apple-touch-fullscreen" content="YES" />
+    <meta name="format-detection" content="telephone=no" />
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    .main {
+        font-size: 20px;
+        flex: 1;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .header,.footer {
+        background: #f5f5f5;
+        height: 44px;
+    }
+    /*.footer {*/
+        /*height: 44px;*/
+    /*}*/
+</style>
+<body>
+<div class="header"></div>
+<div class="main">
+    <input type="text" id="testinput">
+    <input type="button" value="按钮" id="btn" onclick="getReplace();">
+</div>
+<div class="footer"></div>
+<script>
+    function getReplace(){
+        var str='1234wwweeee我我我AAAA';
+        var regex = /[^1-9a-zA-Z]/g;
+        console.log(str.replace(regex,''));
+
+        var name = '"a", "b"';
+        console.log(name.replace(/"([^"]*)"/g, "'$1'"));
+
+        text = "javascript Tutorial";
+        console.log(text.replace(/javascript/, ''));
+    }
+    var inputElement=document.getElementById('testinput');
+//    inputElement.addEventListener('input',function(event){
+//        console.log(inputElement.value);
+//    })
+
+    var inputLock = false;
+    function doinput(inputElement) {
+//        var regex = /[^1-9a-zA-Z]/g;
+//        inputElement.value = inputElement.value.replace(regex, '');
+
+        console.log(inputElement.value)
+    }
+
+    inputElement.addEventListener('compositionstart', function() {
+        inputLock = true;
+    });
+
+
+    inputElement.addEventListener('compositionend', function(event) {
+        inputLock = false;
+        doinput(event.target);
+    });
+
+    inputElement.addEventListener('input', function(event) {
+        if (!inputLock) {
+            doinput(event.target);
+            event.returnValue = false;
+        }
+    });
+</script>
+</body>
+</html>

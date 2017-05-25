@@ -10,4 +10,13 @@ router.get('/', function(req, res, next) {
   }
 });
 
+router.get('/test',function(req,res){
+   res.render('test');
+});
+router.get('/test1',function(req,res){
+    res.render('test1');
+});
+router.get('/demo',function(req,res){
+    res.render('demo');
+});
 module.exports = router;

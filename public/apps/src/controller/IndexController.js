@@ -42,6 +42,13 @@ indexApp.controller("indexCtrl",["$scope","$window","index","$cookies",function(
         });
     };
     $scope.getAllProducts();
+
+    //用于测试单选按钮的checked属性
+    $scope.radioChecked=true;
+    $scope.checkedVal='ANDROID';
+    $scope.printCheckedVal=function(){
+        console.log('被选择的radio值：'+$scope.checkedVal);
+    }
 }]);
 indexApp.controller("logoutCtrl",["$scope","$window","$cookies",function($scope,$window,$cookies){
     $scope.uer=null;
