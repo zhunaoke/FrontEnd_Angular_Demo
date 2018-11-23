@@ -36,69 +36,6 @@
       },
       "method": "put",
       "contentType":"application/json"
-    },
-    {
-      "name": "业务账号-删除业务账号",
-      "id": "taobao.deleteAccount",
-      "urls": {
-        "test": "http://localhost:8099/payplus/internal/v1/pay/business/account/search?page=:page&pageSize=:pageSize",
-        "develop": "http://localhost:8099/payplus/internal/v1/pay/business/account/search?page=:page&pageSize=:pageSize",
-        "product": "http://localhost:8099/payplus/internal/v1/pay/business/account/search?page=:page&pageSize=:pageSize"
-      },
-      "method": "delete",
-      "contentType":"application/json"
-    },
-    {
-      "name": "评论列表",
-      "id": "taobao.commentList",
-      "urls": {
-        "test": "http://119.29.113.67:8036/psy/getDTC?content=:content&state=:state&page=:page&pageSize=:pageSize",
-        "develop": "http://119.29.113.67:8036/psy/getDTC?content=:content&state=:state&page=:page&pageSize=:pageSize",
-        "product": "http://119.29.113.67:8036/psy/getDTC?content=:content&state=:state&page=:page&pageSize=:pageSize"
-      },
-      "method": "get"
-    },
-    {
-      "name": "查看应用基本信息",
-      "id": "taobao.signalAppInfo",
-      "urls": {
-        "test": "http://172.168.69.5:3355/chop-app/api/v1/developer/:uuid/app/:appId",
-        "develop": "http://10.3.30.197:8889/api/v1/developer/:uuid/app/:appId",
-        "product": "http://172.168.69.5:3355/chop-app/api/v1/developer/:uuid/app/:appId"
-      },
-      "method": "get"
-    },
-    {
-      "name": "应用--重置应用的secret值",
-      "id": "taobao.resetSecretKey",
-      "urls": {
-        "test": "http://172.168.69.5:3355/chop-app/api/v1/developer/:uuid/app/:appId/resetkey",
-        "develop": "http://10.3.30.197:8889/api/v1/developer/:uuid/app/:appId/resetkey",
-        "product": "http://172.168.69.5:3355/chop-app/api/v1/developer/:uuid/app/:appId/resetkey"
-      },
-      "method": "put",
-      "contentType":"application/json"
-    },
-    {
-      "name": "咨询--修改医生的咨询状态",
-      "id": "taobao.modAvailableState",
-      "urls": {
-        "test": "http://119.29.113.67:8036/psy/modAvailableState",
-        "develop": "http://119.29.113.67:8036/psy/modAvailableState",
-        "product": "http://119.29.113.67:8036/psy/modAvailableState"
-      },
-      "method": "post",
-      "contentType":"application/json"
-    },
-    {
-      "name": "咨询--获取医生咨询状态",
-      "id": "taobao.getMyAvailableState",
-      "urls": {
-        "test": "http://119.29.113.67:8036/psy/getMyAvailableState",
-        "develop": "http://119.29.113.67:8036/psy/getMyAvailableState",
-        "product": "http://119.29.113.67:8036/psy/getMyAvailableState"
-      },
-      "method": "get"
     }
   ],
   "combo": {
